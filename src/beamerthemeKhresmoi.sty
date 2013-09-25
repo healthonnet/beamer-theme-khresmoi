@@ -1,0 +1,65 @@
+\ProvidesPackage{beamerthemeKhresmoi}[2013/09/25 v0.01]
+
+\mode<presentation>
+
+\usepackage{tikz}
+\useinnertheme{rectangles}
+
+\beamertemplatenavigationsymbolsempty
+
+\setbeamerfont{title}{parent=structure,size=\huge,series=\bfseries}
+\setbeamerfont{author}{parent=structure,size=\Large,series=\normalfont}
+\setbeamerfont{frametitle}{parent=structure,size=\Large,series=\bfseries}
+
+\definecolor{khresmoiauthor}{HTML}{0c5aab}
+\setbeamercolor{item projected}{bg=khresmoiauthor,fg=white}
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamercolor{block title}{fg=black}
+\setbeamercolor{block body}{fg=black}
+\setbeamercolor{section in toc}{fg=black}
+
+\setbeamertemplate{itemize item}{\color{khresmoiauthor}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\color{khresmoiauthor}$\blacksquare$}
+\setbeamertemplate{itemize subsubitem}{\color{khresmoiauthor}$\blacksquare$}
+
+\setbeamertemplate{headline}{
+  \hfill
+  \includegraphics[width=3cm]{khresmoi-logo.jpg}
+  \hspace*{0.3cm}
+  \vskip5pt
+  {\color{khresmoiauthor}\rule{\textwidth}{0.4mm}}
+}
+
+\setbeamertemplate{frametitle}{
+  \vskip-1cm
+  \insertframetitle
+}
+
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}{\usebeamerfont{title in head/foot}} 
+    \hfill    
+    \insertframenumber /\inserttotalframenumber
+  \end{beamercolorbox}%
+}
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+  % absolute position of khresmoi logo
+  \tikz [remember picture,overlay]
+    \node at
+        ([xshift=-2.3cm,yshift=-1cm]current page.north east) 
+        {\includegraphics[width=3cm]{khresmoi-logo.jpg}};
+  \par
+  \usebeamerfont{title}\inserttitle\par
+  \bigskip
+  {\color{khresmoiauthor}\usebeamerfont{author}\insertauthor\par}
+  % absolute position of seventh framework logo
+  \tikz [remember picture,overlay]
+    \node at
+        ([xshift=4cm,yshift=0.7cm]current page.south west) 
+        {\includegraphics[width=7cm]{seventh-framework-logo.png}};
+}
+
+\mode
+<all>
