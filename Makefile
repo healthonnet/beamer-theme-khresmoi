@@ -1,6 +1,8 @@
-DEST_DIR=~/texmf/tex/latex/beamer/themes/khresmoi
+TEMPLATE_DIR=/tex/latex/beamer/themes/khresmoi
 SOURCE_DIR=src
 TO_COPY=beamerthemeKhresmoi.sty khresmoi-logo.jpg seventh-framework-logo.png
+DEST_DIR := $(shell kpsewhich -var-value=TEXMFHOME)
+DEST_DIR := $(DEST_DIR)$(TEMPLATE_DIR)
 
 .PHONY: install
 install:
