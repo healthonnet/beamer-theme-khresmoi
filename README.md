@@ -15,6 +15,13 @@ To install this theme
     
 or copy src file into the directory where you are preparing the presentation
 
+Usage
+-----------
+
+```latex
+\usetheme{Khresmoi}
+```
+
 Developers
 -----------
 
